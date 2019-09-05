@@ -1,3 +1,4 @@
+FROM postgres:11
 FROM ruby:2.6.0
 LABEL maintainer "Tim Brust <tim.brust@sinnerschrader.com>"
 
@@ -14,3 +15,4 @@ RUN apt-get update -qq && apt-get install -qq --no-install-recommends \
   yarn \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
+
