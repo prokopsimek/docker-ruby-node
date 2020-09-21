@@ -1,4 +1,4 @@
-FROM ruby:2.6.0
+FROM ruby:2.6.3
 LABEL maintainer "Tim Brust <tim.brust@sinnerschrader.com>"
 
 ARG REFRESHED_AT
