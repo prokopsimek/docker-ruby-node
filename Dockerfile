@@ -1,5 +1,6 @@
 FROM ruby:2.6.3
-LABEL maintainer "Tim Brust <tim.brust@sinnerschrader.com>"
+
+LABEL maintainer "Prokop Simek <prokop@dxheroes.io>"
 
 ARG REFRESHED_AT
 ENV REFRESHED_AT $REFRESHED_AT
@@ -10,7 +11,7 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN wget -q -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" | tee /etc/apt/sources.list.d/postgresql.list
+RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main" | tee /etc/apt/sources.list.d/postgresql.list
 RUN apt-get update -qq && apt-get install -qq --no-install-recommends \
   nodejs \
   yarn \
